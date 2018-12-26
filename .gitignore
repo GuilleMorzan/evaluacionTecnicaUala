@@ -1,0 +1,11 @@
+*.class
+*.bat 
+
+*.log 
+*.log.* 
+*.recommenders
+target/
+.settings/
+.classpath
+.project
+.metadata/
