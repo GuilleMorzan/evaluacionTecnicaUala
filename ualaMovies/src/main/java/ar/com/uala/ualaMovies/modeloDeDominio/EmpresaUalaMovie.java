@@ -7,7 +7,7 @@ public class EmpresaUalaMovie {
 	private List<Pelicula> peliculas;
 	private List<Serie> series;
 	private List<Documental> documentales;
-	private List<Usuario> usuarios;
+	private List<Cliente> usuarios;
 	
 	public EmpresaUalaMovie() {
 		super();
@@ -37,16 +37,26 @@ public class EmpresaUalaMovie {
 		this.documentales = documentales;
 	}
 
-	public List<Usuario> getUsuarios() {
+	public List<Cliente> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(List<Usuario> usuarios) {
+	public void setUsuarios(List<Cliente> usuarios) {
 		this.usuarios = usuarios;
 	}
 
 	//Asumo que como es una plataforma que hace streaming siempre va a tener al menos una pelicula	
-	public Producto streamProductoRandom() {
+	public Producto streamPeliculaRandom() {
 		return peliculas.get(0);
+	}
+	
+	//Asumo que como es una plataforma que hace streaming siempre va a tener al menos una pelicula	
+	public Producto streamSerieRandom() {
+		return series.get(0);
+	}
+	
+	//Asumo que como es una plataforma que hace streaming siempre va a tener al menos una pelicula	
+	public Producto streamDocumentalRandom() {
+		return documentales.get(0);
 	}
 }

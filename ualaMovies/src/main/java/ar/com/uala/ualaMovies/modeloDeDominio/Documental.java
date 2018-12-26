@@ -16,5 +16,9 @@ public class Documental extends Producto {
 		this.genero = genero;
 	}
 	
+	@Override
+	public boolean esInteresante() {
+		return titulo.contains("unofficial");
+	}
 	
 }

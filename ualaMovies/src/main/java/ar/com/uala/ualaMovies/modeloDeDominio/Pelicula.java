@@ -1,10 +1,11 @@
 package ar.com.uala.ualaMovies.modeloDeDominio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pelicula extends Producto{
 
-	List<Oscar> oscarsObtenidos;
+	List<Oscar> oscarsObtenidos = new ArrayList<Oscar>();
 
 	public Pelicula() {
 		super();
@@ -16,5 +17,10 @@ public class Pelicula extends Producto{
 
 	public void setOscarsObtenidos(List<Oscar> oscarsObtenidos) {
 		this.oscarsObtenidos = oscarsObtenidos;
+	}
+	
+	@Override
+	public boolean esInteresante() {
+		return (oscarsObtenidos != null && (oscarsObtenidos.size() > 0));
 	}
 }

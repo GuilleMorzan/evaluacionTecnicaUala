@@ -1,6 +1,6 @@
 package ar.com.uala.ualaMovies.modeloDeDominio;
 
-public class Usuario {
+public class Cliente {
 
 	private Integer numeroSocio;
 	private Integer cantidadProductosConsumidos;
@@ -9,7 +9,7 @@ public class Usuario {
 	private EmpresaUalaMovie empresaContratada;
 	private Producto productoQueEstaObservando;
 	
-	public Usuario(Integer numeroSocio, Integer cantidadProductosConsumidos,
+	public Cliente(Integer numeroSocio, Integer cantidadProductosConsumidos,
 			EstadoAnimo estadoAnimo, Boolean esAntiguo, 
 			EmpresaUalaMovie empresaContratada, Producto productoQueEstaObservando) {
 		super();
@@ -21,7 +21,7 @@ public class Usuario {
 		this.productoQueEstaObservando = productoQueEstaObservando;
 	}
 
-	public Usuario() {
+	public Cliente() {
 	}
 
 	public Integer getNumeroSocio() {
@@ -72,11 +72,29 @@ public class Usuario {
 		this.productoQueEstaObservando = productoQueEstaObservando;
 	}
 
-	public void visualizarProductoRandom(){
-		Producto producto = empresaContratada.streamProductoRandom();
+	public void visualizarPeliculaRandom(){
+		Producto producto = empresaContratada.streamPeliculaRandom();
+		setearProducto(producto);
+	}
+
+	public void visualizarSerieRandom(){
+		Producto producto = empresaContratada.streamSerieRandom();
+		setearProducto(producto);
+	}
+	
+	public void visualizarDocumentalRandom(){
+		Producto producto = empresaContratada.streamDocumentalRandom();
+		setearProducto(producto);
+	}
+	
+	private void setearProducto(Producto producto) {
 		this.productoQueEstaObservando = producto;
 		if(producto.esAntiguo()){
 			this.esAntiguo = true;
 		}
+	}
+	
+	public boolean miraAlgoInteresante(){
+		return productoQueEstaObservando.esInteresante();
 	}
 }

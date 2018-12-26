@@ -5,9 +5,10 @@ import java.util.Date;
 public abstract class Producto {
 
 	private final Long MILLS_DOS_AÑOS = 1000L * 60L * 60L * 24L * 365L * 2L;	
-	private Date fechaEstreno;
-	private Integer minutosDuracion;
-	private String titulo;
+	protected Date fechaEstreno;
+	protected Integer minutosDuracion;
+	protected String titulo;
+	
 	public Date getFechaEstreno() {
 		return fechaEstreno;
 	}
@@ -32,5 +33,9 @@ public abstract class Producto {
 		Date now = new Date();
 		Long millsActual = now.getTime();
 		return ((millsActual - millsFechaEstreno) > MILLS_DOS_AÑOS);
+	}
+
+	public boolean esInteresante() {
+		return false;
 	}
 }
