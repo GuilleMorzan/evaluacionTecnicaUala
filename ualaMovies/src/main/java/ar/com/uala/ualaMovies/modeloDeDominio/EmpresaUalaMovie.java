@@ -44,4 +44,9 @@ public class EmpresaUalaMovie {
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+	//Asumo que como es una plataforma que hace streaming siempre va a tener al menos una pelicula	
+	public Producto streamProductoRandom() {
+		return peliculas.get(0);
+	}
 }
